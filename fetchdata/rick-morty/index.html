@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>rick & morty app</title>
+</head>
+<body>
+    <template id="location__card">
+        <div class="location__card">
+            <div class="location__description">
+                <p class="location__title"></p>
+                <p class="location__dimension"></p>
+                <p class="location__subtitle">Residents:</p>
+            </div>
+            <div class="location__residents"></div>
+        </div>
+    </template>
+    <template id="card">
+        <div class="character">
+            <img class="character__photo" src="" alt="">
+            <div class="character__name"></div>
+        </div>
+    </template>
+    <header>
+        <nav class="main__header">
+            <button id="1" class="header__button main__page_start">Characters</button>
+            <button class="header__button episode__button_start">Episodes</button>
+            <div class="header__logo">
+                <img class="header__logo_content" src="content/Daco_4305710.png" alt="logo">
+            </div>
+            <button id="location_button" class="header__button">Locations</button>
+        </nav>
+    </header> 
+    <main>
+        <section class="window" id="main">
+            <!-- Episode window -->
+            <section id="episode__window" class="episode__container unactive">
+                <section id="episodes__list" class="episodes__list"></section>
+                <section id="episode__info" class="episode__info">
+                    <div id="episode__header" class="episode__header">
+                        <button class="episode__button_prev">Prev</button>
+                        <h1 class="episode__title" onselectstart="return false" onmousedown="return false"></h1>
+                        <button class="episode__button_next">Next</button>
+                    </div>
+                    <section id="episode__chars" class="list"></section>
+                </section>
+            </section>
+            <!-- Character window -->
+            <section id="characters__window" class="characters__window unactive">
+                <section id="navigation" class="navigation">
+                    <div class="navigation__buttons_container"></div>
+                </section>                
+                <section class="filter">
+                    <div class="filter__container">
+                        <p class="filter__title">Search by name:</p>
+                        <input placeholder="Enter name" class="filter__input" id="search" type="text">
+                    </div>
+                    <div class="filter__container">
+                        <p class="filter__title">Filter by status:</p>
+                        <select class="filter__input" name="status" id="status">
+                            <option value="none">---</option>
+                            <option value="alive">Alive</option>
+                            <option value="dead">Dead</option>
+                            <option value="unknown">Unknown</option>
+                        </select>
+                    </div>
+                    <div class="filter__container">
+                        <p class="filter__title">Filter by gender</p>
+                        <select class="filter__input" name="gender" id="gender">
+                            <option value='none'>---</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="genderless">Genderless</option>
+                            <option value="unknown">Unknown</option>
+                        </select>
+                    </div>
+                </section>
+                <section id="character_list" class="list"></section>
+            </section>
+            <!-- Location window -->
+            <section id="location__window" class="location__window">
+                <section id="location__list" class="location__list">
+                </section>
+            </section>
+            <section id="modal_char" class="modal">
+                <div class="modal__char_container">
+                    <div class="modal__slider">                        
+                        <img class="modal__photo" src="" alt="">
+                    </div>
+                    <div class="modal__description">
+                        <h2 class="modal__name"></h2>
+                        <p class="modal__gender"></p>
+                        <p class="modal__statusandlocation"></p>
+                    </div>
+                </div>
+            </section>
+            <section id="modal_episode" class="modal">
+                <div class="modal__episode_container">
+                    <h2 class="modal__episode_name"></h2>
+                    <p class="modal__episode_episode"></p>
+                    <p class="modal__episode_airdate"></p>
+                    <p class="modal__episode_created"></p>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+<script type="module" src="main.js"></script>
+<script type="module" src="Locations/getLocationData.js"></script>
+</html>
